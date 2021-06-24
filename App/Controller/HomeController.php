@@ -3,7 +3,13 @@
     {
         public function index()
         {
-            echo 'Home';
+            try {
+                $colecPostagens = Cadastro::selecionaTodos();
+
+                var_dump($colecPostagens);
+            } catch (Exception $e){
+                echo $e->getMessage();
+            }
         }
     }
 ?>

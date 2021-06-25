@@ -1,11 +1,15 @@
 <section>
     <h1>Cadastros</h1>
 
+    {% for cadastro in cadastros %}
     <article>
         <header>
-            <h2><a href="#">Nome cadastro</a></h2>
+            <h2><a href="#">{{cadastro.nome}}</a></h2>
         </header>
 
-        <p>Conteudo do cadastro</p>
+        <p>{{cadastro.idade}} anos</p>
+        <p>CPF: {{cadastro.cpf}}</p>
+        <p>Cadastrado em: {{cadastro.created_at}}</p>
     </article>
+    {% endfor %}
 </section>

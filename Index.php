@@ -13,6 +13,7 @@
     require_once 'app/Controller/ErroController.php';
     require_once 'app/Model/Cadastro.php';
     require_once 'lib/Database/Connection.php';
+    require_once 'vendor/autoload.php';
 
     $template = file_get_contents('App/Template/Estrutura.html');
 

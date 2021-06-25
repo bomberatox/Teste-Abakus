@@ -4,12 +4,10 @@
     {% for cadastro in cadastros %}
     <article>
         <header>
-            <h2><a href="#">{{cadastro.nome}}</a></h2>
+            <h2><a href="https://localhost/_teste%20abakus/?pagina=cadastro&id={{cadastro.id}}">{{cadastro.nome}}</a></h2>
         </header>
 
-        <p>{{cadastro.idade}} anos</p>
         <p>CPF: {{cadastro.cpf}}</p>
-        <p>Cadastrado em: {{cadastro.created_at}}</p>
     </article>
     {% endfor %}
 </section>

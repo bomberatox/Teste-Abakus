@@ -3,7 +3,11 @@
     {
         public function start($urlGet)
         {
-            $acao = 'index';
+            if (isset($urlGet['metodo'])){
+                $acao = $urlGet['metodo'];
+            } else{
+                $acao = 'index';
+            }
             
             if (isset($urlGet['pagina'])) {
                 $controller = ucfirst($urlGet['pagina'].'Controller');

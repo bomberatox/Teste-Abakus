@@ -60,5 +60,31 @@
             
             return true;
         }
+
+        public static function update($params){
+            if (empty($dadosCad['nome']) OR empty($dadosCad['idade']) OR empty($dadosCad['cpf'])){
+                throw new Exception("Falha ao atualizar cadastro");
+
+                return false;
+            }
+
+            $con = Connection::getConn();
+
+            $sql = "UPDATE cadastro SET nome = :nome, idade = :idade, cpf = :cpf WHERE id = :id";
+            $sql = $con->prepare($sql);
+            $sql->bindValue(':nome', $params['nome']);
+            $sql->bindValue(':idade', $params['idade']);
+            $sql->bindValue(':cpf', $params['cpf']);
+            $sql->bindValue(':id', $params['id']);
+            $res = $sql->execute();
+
+            if ($res == 0){
+                throw new Exception("Falha ao atualizar cadastro");
+                
+                return false;
+            }
+            
+            return true;
+        }
     }
 ?>

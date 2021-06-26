@@ -1,0 +1,16 @@
+<h1>Atualizar Cadastro</h1>
+
+<form method="POST" action="?pagina=admin&metodo=update">
+    <span>Nome</span><br>
+    <input type="text" name="nome" value="{{cadastro.nome}}"><br><br>
+
+    <span>idade</span><br>
+    <input type="number" name="idade" value="{{cadastro.idade}}"><br><br>
+
+    <span>CPF</span><br>
+    <input type="text" name="cpf" maxlength="11" value="{{cadastro.cpf}}"><br><br>
+
+    <input type="hidden" name="id" value="{{cadastro.id}}">
+
+    <input type="submit" value="Atualizar">
+</form>

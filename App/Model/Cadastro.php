@@ -86,5 +86,24 @@
             
             return true;
         }
+
+        public static function delete ($params){
+
+            $con = Connection::getConn();
+
+            $sql = "DELETE FROM cadastro WHERE id = :id";
+            $sql = $con->prepare($sql);
+            $sql->bindValue(':id', $params['id']);
+            $res = $sql->execute();
+
+            if ($res == 0){
+                throw new Exception("Falha ao deletar cadastro");
+                
+                return false;
+            }
+            
+            return true;
+
+        }
     }
 ?>

@@ -1,0 +1,19 @@
+<h1>Deletar Cadastro</h1>
+
+<form method="POST" action="?pagina=admin&metodo=delete">
+
+    <h1>ATENÇÃO!</h1>
+    <p>Você está prestes a deletar o seguinte cadastro</p><br>
+
+    <article>
+        <header>
+            <h2>{{cadastro.nome}}</h2>
+        </header>
+
+        <p>{{cadastro.idade}} anos</p>
+        <p>CPF: {{cadastro.cpf}}</p>
+        <p>Cadastrado em: {{cadastro.created_at}}</p>
+    </article>
+
+    <input type="submit" value="Deletar">
+</form>

@@ -75,5 +75,38 @@
                 echo '<script>location.href="https://localhost/_teste%20abakus/?pagina=admin&metodo=atualizar&id='.$_POST['id'].'"</script>';
             }
         }
+
+        public function confirm($paramId){
+            try {
+                $loader = new \Twig\Loader\FilesystemLoader('app/View');
+                $twig = new \Twig\Environment($loader);
+                $template = $twig->load('confirm.html');
+
+                $cadastro = Cadastro::selecionaPorId($paramId);
+
+                $parametros = array();;
+                $parametros['cadastro'] = $cadastro;
+
+                $conteudo = $template->render($parametros);
+                echo $conteudo;
+            } catch (Exception $e){
+                echo $e->getMessage();
+            }
+        }
+        
+
+        public function deletar(){
+            
+            try {
+
+                Cadastro::delete($_POST);
+
+                echo '<script>alert("Cadastro deletado com sucesso!");</script>';
+                echo '<script>location.href="https://localhost/_teste%20abakus/?pagina=admin&metodo=index"</script>';
+            } catch (Exception $e){
+                echo $e->getMessage();
+                echo '<script>location.href="https://localhost/_teste%20abakus/?pagina=admin&metodo=index"</script>';
+            }
+        }
     }
 ?>

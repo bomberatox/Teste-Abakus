@@ -9,10 +9,12 @@
         <th>ATUALIZAR</th>
         <th>DELETAR</th>
     </tr>
+    {% for cadastro in cadastros %}
     <tr>
-        <th>ID</th>
-        <th>NOME</th>
+        <th>{{cadastro.id}}</th>
+        <th>{{cadastro.nome}}</th>
         <th>ATUALIZAR</th>
         <th>DELETAR</th>
     </tr>
+    {% endfor %}
 </table>

@@ -36,5 +36,29 @@
 
             return $resultado;
         }
+        public static function insert($dadosCad){
+            if (empty($dadosCad['nome']) OR empty($dadosCad['idade']) OR empty($dadosCad['cpf'])){
+                throw new Exception("Preencha todos os dados!");
+
+                return false;
+            }
+
+            $con = Connection::getConn();
+            
+            $sql = 'INSERT INTO cadastro (nome, idade, cpf) VALUES (:nome, :idade, :cpf)';
+            $sql = $con->prepare($sql);
+            $sql->bindValue(':nome', $dadosCad['nome']);
+            $sql->bindValue(':idade', $dadosCad['idade']);
+            $sql->bindValue(':cpf', $dadosCad['cpf']);
+            $res = $sql->execute();
+
+            if ($res == 0){
+                throw new Exception("Falha ao inserir novo cadastro");
+                
+                return false;
+            }
+            
+            return true;
+        }
     }
 ?>

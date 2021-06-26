@@ -8,7 +8,10 @@
                 $twig = new \Twig\Environment($loader);
                 $template = $twig->load('admin.html');
 
+                $objCadastros = Cadastro::selecionaTodos();
+
                 $parametros = array();;
+                $parametros['cadastros'] = $objCadastros;
 
                 $conteudo = $template->render($parametros);
                 echo $conteudo;
@@ -32,7 +35,15 @@
             }
         }
         public function insert(){
-            var_dump($_POST);
+            try {
+                Cadastro::insert($_POST);
+
+                echo '<script>alert("Cadastro realizado com sucesso!");</script>';
+                echo '<script>location.href="https://localhost/_teste%20abakus/?pagina=admin&metodo=index"</script>';
+            } catch(Exception $e){
+                echo '<script>alert("'.$e->getMessage().'");</script>';
+                echo '<script>location.href="https://localhost/_teste%20abakus/?pagina=admin&metodo=create"</script>';
+            }
         }
     }
 ?>

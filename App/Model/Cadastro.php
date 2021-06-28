@@ -62,8 +62,8 @@
         }
 
         public static function update($params){
-            if (empty($dadosCad['nome']) OR empty($dadosCad['idade']) OR empty($dadosCad['cpf'])){
-                throw new Exception("Falha ao atualizar cadastro");
+            if (empty($params['nome']) OR empty($params['idade']) OR empty($params['cpf'])){
+                throw new Exception("Preencha todos os campos!");
 
                 return false;
             }
@@ -80,10 +80,10 @@
 
             if ($res == 0){
                 throw new Exception("Falha ao atualizar cadastro");
-                
+
                 return false;
             }
-            
+
             return true;
         }
 

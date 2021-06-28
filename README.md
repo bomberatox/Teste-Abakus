@@ -35,5 +35,6 @@
 ## Instruções de instalação:
 1) Clone o repositório.
 2) Mova o diretório para o servidor de hospedagem local (Exemplo: Pasta htdocs do XAMPP).
-3) Execute o script de criação de banco de dados localizado na raiz do repositório.
-4) Execute os testes.
+3) Renomeie a pasta para "_Teste abakus", para evitar erros com os links utilizados no código.
+4) Execute o script de criação de banco de dados localizado na raiz do repositório.
+5) Execute os testes.

@@ -1,5 +1,5 @@
 ### Teste técnico requisitado pela empresa Abakus
-> Status: Finalizado ✅
+> Status: Incompleto ⚠️
 ### Sistema CRUD de cadastro de pessoas criado utilizando PHP no padrão MVC
 
 ## Conteudo do cadastro:
